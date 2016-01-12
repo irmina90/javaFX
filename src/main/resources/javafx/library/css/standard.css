@@ -1,0 +1,26 @@
+/* Root of the object tree */
+.root {
+}
+
+
+/* Select elements by their CSS class ("styleClass" attribute) */
+.formTitle {
+	-fx-font-size: 25.0px;
+	-fx-font-weight: bold;
+	-fx-alignment: center;
+}
+
+/* Select elements using the "selected" pseudo-selector */
+.table-view .table-row-cell:selected {
+	-fx-font-weight: bold;
+	-fx-font-size: 130.0%;
+}
+
+#titleField {
+	-fx-text-alignment: right;
+}
+
+.formAddBookTitle {
+	-fx-font-size: 18.0px;
+}
+
