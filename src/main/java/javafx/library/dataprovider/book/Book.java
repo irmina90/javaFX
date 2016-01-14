@@ -1,10 +1,13 @@
-package javafx.library.dataprovider.data;
+package javafx.library.dataprovider.book;
 
 public class Book {
-
 	private int id;
 	private String title;
 	private String authors;
+
+	public Book() {
+
+	}
 
 	public Book(String name, String authors) {
 		this.title = name;
