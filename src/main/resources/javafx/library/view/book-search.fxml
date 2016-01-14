@@ -28,8 +28,8 @@
       <Label text="%table.emptyText" />
     </placeholder>
     <columns>
-      <TableColumn fx:id="titleColumn" minWidth="237" prefWidth="237" text="%column.title" />
-      <TableColumn fx:id="authorColumn" minWidth="237" prefWidth="237" text="%column.author" />
+      <TableColumn fx:id="titleColumn" minWidth="236" prefWidth="236" text="%column.title" />
+      <TableColumn fx:id="authorColumn" minWidth="236" prefWidth="236" text="%column.author" />
     </columns>
   </TableView>
 </AnchorPane>
