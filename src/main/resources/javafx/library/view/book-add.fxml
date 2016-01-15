@@ -34,6 +34,7 @@
     </rowConstraints>
     <children>
       <Button fx:id="addBookButton" defaultButton="true" layoutX="14.0" layoutY="140.0" mnemonicParsing="false" onAction="#addBookAction" text="%button.addBookAction" />
+      <!-- REV: tutaj mialo byc chyba cancelButton="true" -->
       <Button fx:id="cancelButton" defaultButton="true" layoutX="14.0" layoutY="100.0" mnemonicParsing="false" onAction="#closeButtonAction" text="%button.cancelButton" GridPane.columnIndex="1" />
     </children>
   </GridPane>

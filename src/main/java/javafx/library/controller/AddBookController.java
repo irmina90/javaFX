@@ -33,6 +33,9 @@ public class AddBookController {
 	private BookSearchController bookSearchCtrl;
 	private BookSearch modelBookSearch;
 	private AddBook model = new AddBook();
+	/*
+	 * REV: nie ma potrzeby przechowywania referencji do Stage'a
+	 */
 	private Stage dialogStage;
 
 	@FXML
@@ -51,6 +54,9 @@ public class AddBookController {
 			protected void failed() {
 				Alert alert = new Alert(AlertType.ERROR);
 				alert.initOwner(dialogStage);
+				/*
+				 * REV: teksty powinny byc pobrane z bundle'a
+				 */
 				alert.setTitle("Invalid Fields");
 				alert.setHeaderText("Please correct invalid fields");
 				alert.showAndWait();
@@ -81,6 +87,9 @@ public class AddBookController {
 				dialogStage.close();
 
 				Alert alert = new Alert(AlertType.INFORMATION);
+				/*
+				 * REV: j.w.
+				 */
 				alert.setTitle("Information");
 				alert.setHeaderText("Success!");
 				alert.setContentText("Book " + newBookTitle.getText() + " has been saved successfully!");
@@ -92,6 +101,9 @@ public class AddBookController {
 	}
 
 	private boolean isInputValid() {
+		/*
+		 * REV: tworzysz errroMessage, ale nie zwracasz go na zewnatrz
+		 */
 		String errorMessage = "";
 		if (newBookTitle.getText() == null || newBookTitle.getText().length() == 0) {
 			errorMessage += "No valid title!\n";
@@ -100,8 +112,14 @@ public class AddBookController {
 			errorMessage += "No valid author!\n";
 		}
 		if (errorMessage.length() == 0) {
+			/*
+			 * REV: nigdy nie zwracasz false, wiec metoda moze miec typ void
+			 */
 			return true;
 		} else {
+			/*
+			 * REV: zawsze dodawaj opis do wyjatku
+			 */
 			throw new IllegalArgumentException();
 		}
 	}

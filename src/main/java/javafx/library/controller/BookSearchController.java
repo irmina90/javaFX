@@ -115,17 +115,25 @@ public class BookSearchController {
 			Stage dialogStage = new Stage();
 			dialogStage.setTitle("Add book");
 			dialogStage.initModality(Modality.WINDOW_MODAL);
-			dialogStage.initOwner(main.getPrimaryStage());
+			/*
+			 * REV: okno mozna pobrac w taki sposob: titleField.getScene().getWindow()
+			 */
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("/javafx/library/css/alternative.css").toExternalForm());
 			dialogStage.setScene(scene);
 			AddBookController addBookCtrl = loader.getController();
 			addBookCtrl.setDialogStage(dialogStage);
+			/*
+			 * REV: odwolanie przez zmienna main nie jest konieczne, jestes w BookSearchControllerze
+			 */
 			addBookCtrl.setBookSearchCtrl(main.getBookSearchCtrl());
 			addBookCtrl.setModelBookSearch(main.getBookSearchCtrl().getModel());
 			dialogStage.showAndWait();
 
 		} catch (IOException e) {
+			/*
+			 * REV: dobrze byloby jakos fajniej obsluzyc ten wyjatek
+			 */
 			e.printStackTrace();
 		}
 	}
