@@ -66,3 +66,7 @@
 .table-view .scroll-bar > .increment-button, .table-view .scroll-bar > .decrement-button {
 	-fx-background-color: -ps-control-background-color;
 }
+
+.dialog-pane .label {
+    -fx-text-fill: black;
+}

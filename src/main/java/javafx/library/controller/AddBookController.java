@@ -48,6 +48,15 @@ public class AddBookController {
 		Task<Book> backgroundTask = new Task<Book>() {
 
 			@Override
+			protected void failed() {
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.initOwner(dialogStage);
+				alert.setTitle("Invalid Fields");
+				alert.setHeaderText("Please correct invalid fields");
+				alert.showAndWait();
+			}
+
+			@Override
 			protected Book call() throws Exception {
 				LOG.debug("call() called");
 				Book result = null;
@@ -93,14 +102,7 @@ public class AddBookController {
 		if (errorMessage.length() == 0) {
 			return true;
 		} else {
-			Alert alert = new Alert(AlertType.ERROR);
-			alert.initOwner(dialogStage);
-			alert.setTitle("Invalid Fields");
-			alert.setHeaderText("Please correct invalid fields");
-			alert.setContentText(errorMessage);
-			alert.showAndWait();
-
-			return false;
+			throw new IllegalArgumentException();
 		}
 	}
 
